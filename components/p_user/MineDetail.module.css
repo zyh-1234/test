@@ -1,0 +1,161 @@
+.minedetail_wrap {
+  display: block;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #5f5f5f;
+  border-bottom: 1px solid #ccc;
+}
+
+.head p:last-child {
+  padding: 5px 0;
+  font-size: 20px;
+}
+
+.edit span,
+.success span {
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.edit span:first-child {
+  font-size: 16px;
+  color: rgb(216, 216, 216);
+}
+
+.edit span:last-child {
+  color: #866909;
+}
+
+.success span:first-child {
+  color: #866909;
+}
+
+.success span:last-child {
+  font-size: 16px;
+  color: rgb(216, 216, 216);
+}
+
+.item_wrap {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 20px 0;
+}
+
+.nickname {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nickname_title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.nickname_title p:first-child {
+  margin-right: 5px;
+  font-size: 12px;
+  color: red;
+}
+
+.nickname_item_wrap {
+  width: 50%;
+  margin: 0 20px;
+}
+
+.nickname_item {
+  margin: 0;
+}
+
+.nickname_submit {
+  margin: 0;
+}
+
+.email_phone {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.email_phone_des {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+}
+
+.item_label {
+  width: 88px;
+  margin-bottom: 5px;
+}
+
+.item {
+  margin: 0;
+}
+
+.item:nth-child(1) {
+  width: 50%;
+}
+
+.item:nth-child(2) {
+  width: 50%;
+  margin: 0 20px;
+}
+
+.submit {
+  text-align: center;
+  cursor: pointer;
+}
+
+.submit_icon svg {
+  width: 25px;
+  height: 25px;
+  color: rgb(8, 212, 76);
+}
+
+.item_wrap_suggest {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.password_title {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.contact_title {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.contact_title p:last-child {
+  font-size: 12px;
+}
+
+.suggest_title {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.suggest_submit_icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 25px;
+  color: white;
+  background-color: rgb(8, 212, 76);
+  border-radius: 4px;
+}
+
+.suggest_submit_icon:hover {
+  background-color: rgb(4, 117, 117);
+}

@@ -1,0 +1,17 @@
+.shopping_bag_wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .shopping_bag_wrap {
+    width: 80%;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

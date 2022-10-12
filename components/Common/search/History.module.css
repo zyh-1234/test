@@ -1,0 +1,60 @@
+.container {
+  margin: 0 20px;
+  font-size: 16px;
+  color: #36404a;
+}
+
+.hot_head,
+.history_head {
+  position: relative;
+  padding: 18px 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+}
+
+.item {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  padding: 2px 10px;
+  margin: 10px 20px;
+  color: #ff4c38;
+  text-align: center;
+  text-overflow: ellipsis;
+  letter-spacing: 0;
+  white-space: nowrap;
+  background: #ffe2e0;
+  border-radius: 5px;
+}
+
+/* 历史 */
+
+.history_head {
+  margin-top: 30px;
+}
+
+.clean {
+  width: 20px;
+  height: 20px;
+}
+
+.del {
+  position: absolute;
+  right: 0;
+}
+
+.del:focus {
+  outline: none;
+}
+
+.list {
+  padding: 5px 30px;
+  margin: 20px 20px 0 0;
+  color: #36404a;
+  border: 1px solid #36404a;
+  border-radius: 20px;
+}

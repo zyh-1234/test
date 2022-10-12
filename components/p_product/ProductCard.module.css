@@ -1,0 +1,69 @@
+.product_card_wrap {
+  position: relative;
+  padding: 0 0 50px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(54, 54, 54);
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.product_card_wrap:hover {
+  border: 1px solid rgb(212, 212, 212);
+}
+
+.product_card_img {
+  width: 100%;
+}
+
+.showdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 50%;
+  cursor: pointer;
+  background-image: url('https://d1d4ws4rsi496l.cloudfront.net/static/version16608861612/frontend/Opentechiz/glamira/zh_Hans_CN/OpenTechiz_LayeredNavigationExtend/images/product_img.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.product_card_des_wrap {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+}
+
+.product_card_des {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product_card_des .des {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.product_card_des p:hover {
+  text-decoration: underline;
+}
+
+.product_card_des_code {
+  flex: 1;
+  text-align: right;
+}
+
+.product_card_des_price {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.product_card_des_name {
+  flex: 1;
+  text-align: left;
+}

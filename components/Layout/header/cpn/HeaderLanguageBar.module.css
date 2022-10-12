@@ -1,0 +1,15 @@
+.language_wrap {
+  display: flex;
+  vertical-align: middle;
+}
+
+.language_wrap .language {
+  padding: 3px 15px 0 0;
+  margin-right: 15px;
+  cursor: pointer;
+  border-right: 1px solid rgba(58, 2, 2, 0.3);
+}
+
+.language_wrap .language:last-child {
+  border: none;
+}

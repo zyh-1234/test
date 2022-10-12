@@ -1,0 +1,58 @@
+.home_collection_wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .home_collection_wrap {
+    width: 90%;
+  }
+}
+
+.home_collection {
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.home_collection_content {
+  position: relative;
+}
+
+.img_wrap {
+  position: relative;
+}
+
+.img_wrap .title {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  color: #414042;
+  text-align: center;
+  letter-spacing: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  display: block;
+  width: 45px;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transform: translate(0, -50%);
+}
+
+.prev {
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='94' viewBox='0 0 50 94' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L3.00001 0C28.9574 0 50 21.0426 50 47C50 72.9574 28.9574 94 3.00001 94L0 94L0 0Z' fill='%23676767' fill-opacity='0.9'/%3E%3Cpath d='M10.2943 46.6453L22.3583 34.5813C22.7577 34.1956 23.3941 34.2066 23.7799 34.606C24.1561 34.9956 24.1561 35.6132 23.7799 36.0028L12.4266 47.356L23.7799 58.7092C24.1723 59.1018 24.1723 59.7382 23.7799 60.1308C23.3872 60.5232 22.7509 60.5232 22.3583 60.1308L10.2943 48.0668C9.90186 47.6742 9.90186 47.0378 10.2943 46.6453Z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E");
+}
+
+.next {
+  right: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='94' viewBox='0 0 50 94' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 94L47 94C21.0426 94 -5.78979e-06 72.9574 -3.52052e-06 47C-1.25126e-06 21.0426 21.0426 5.09786e-06 47 7.36713e-06L50 7.62939e-06L50 94Z' fill='%23676767' fill-opacity='0.9'/%3E%3Cpath d='M39.7057 47.3548L27.6417 59.4187C27.2423 59.8044 26.6059 59.7934 26.2202 59.394C25.8439 59.0044 25.8439 58.3868 26.2202 57.9972L37.5734 46.644L26.2202 35.2908C25.8277 34.8982 25.8277 34.2618 26.2202 33.8692C26.6128 33.4768 27.2491 33.4768 27.6417 33.8692L39.7057 45.9332C40.0981 46.3258 40.0981 46.9622 39.7057 47.3548Z' fill='white' fill-opacity='0.85'/%3E%3C/svg%3E");
+}

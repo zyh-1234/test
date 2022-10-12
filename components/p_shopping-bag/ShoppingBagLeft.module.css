@@ -1,0 +1,28 @@
+.shopping_bag_left {
+  flex: 1;
+}
+
+.shopping_bag_left .title p {
+  font-size: 28px;
+}
+
+.shopping_bag_left .title a {
+  position: relative;
+  padding: 0 20px;
+  font-size: 10px;
+  font-weight: normal;
+  color: #ccc !important;
+}
+
+.shopping_bag_left .title a::after {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  display: block;
+  width: 8px;
+  height: 8px;
+  content: '';
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  transform: translateY(-50%) rotate(45deg);
+}

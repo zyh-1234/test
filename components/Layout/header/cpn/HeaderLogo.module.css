@@ -1,0 +1,9 @@
+.logo_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 220px;
+  padding: 10px 0;
+}

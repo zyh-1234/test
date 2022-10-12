@@ -1,0 +1,48 @@
+.user_wrap {
+  width: 60%;
+  margin: 20px auto;
+  letter-spacing: 1.2px;
+  transition: all ease 0.5s;
+}
+
+@media (max-width: 1230px) {
+  .user_wrap {
+    width: 80%;
+  }
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  margin-right: 40px;
+}
+
+.navbar li {
+  padding: 10px 60px;
+  font-size: 16px;
+  color: #5f5f5f;
+  background-color: rgb(240, 240, 240);
+}
+
+.navbar li:hover {
+  color: #fff;
+  background-color: #a4a4a4;
+}
+
+.navbar .current {
+  color: #fff;
+  background-color: #a4a4a4;
+}
+
+.content_wrap {
+  flex: 1;
+  min-width: 500px;
+}

@@ -1,0 +1,29 @@
+.userbar_wrap {
+  cursor: pointer;
+}
+
+.userbar_wrap:hover {
+  color: #e2c082;
+}
+
+.userbar {
+  display: flex;
+}
+
+.user_icon {
+  display: flex;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.user_title {
+  margin-left: 8px;
+}
+
+.user_title p {
+  height: 25px;
+  line-height: 25px;
+}

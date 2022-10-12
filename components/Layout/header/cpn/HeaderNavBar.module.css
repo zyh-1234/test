@@ -1,0 +1,32 @@
+.loginbar_wrap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.about_us {
+  position: relative;
+  width: 100px;
+  transition: all ease 0.5s;
+}
+
+.about_us span {
+  margin-left: 4px;
+}
+
+.about_us a {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.about_us a .about_us_icon {
+  width: 18px;
+  height: 20px;
+  font-family: none;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

@@ -1,0 +1,43 @@
+.title {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.title p:last-child {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.login_left_ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login_left_ul_li {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px 0;
+  color: #8d8d8d;
+}
+
+.login_left_ul_li .icon {
+  width: 54px;
+  height: 54px;
+  padding: 10px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.login_left_ul_li .content {
+  flex: 1;
+}
+
+.login_left_ul_li .content p:first-child {
+  font-weight: 700;
+  color: #7f7f7f;
+}

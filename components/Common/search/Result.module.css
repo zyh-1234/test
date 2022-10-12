@@ -1,0 +1,93 @@
+.container {
+  margin-top: -0.18rem;
+}
+
+.result_title {
+  padding: 0.35rem 0 0.19rem;
+  margin: 0 0.36rem;
+  font-size: 0.3rem;
+  color: #aab0b6;
+}
+
+.result_title::after {
+  color: #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.result_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.result_item_wrap {
+  width: 33.33%;
+  padding: 40px;
+}
+
+.result_item {
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #36404a;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+  border-radius: 15px;
+  transition: all ease 0.5s;
+}
+
+.result_item:hover {
+  border: 1px solid #36404a;
+  box-shadow: 0 8px 8px #dfdfdf;
+  transform: translateY(-10px);
+}
+
+.result_des {
+  margin-top: 20px;
+}
+
+.img {
+  display: block;
+  width: 436px;
+  height: 305px;
+  margin: 20px auto 0;
+}
+
+.title {
+  margin-top: 0.26rem;
+  font-size: 0.34rem;
+  color: #36404a;
+  text-align: center;
+  letter-spacing: -0.82px;
+}
+
+.back {
+  display: block;
+  width: 86px;
+  margin: 14px auto 0;
+  font-size: 14px;
+  color: #36404a;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+.back:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 自定义圆角样式 */
+.back::before {
+  border-radius: 5px;
+}
+
+/* 2倍屏 */
+
+/* @media (min-resolution: 2dppx) {
+  .back::before {
+    border: solid 1px #dadada;
+    border-radius: 0.18rem;
+  }
+} */

@@ -1,0 +1,44 @@
+.description_wrap {
+  position: absolute;
+  bottom: 26px;
+  left: -311px;
+  z-index: 99;
+  width: 322px;
+  max-width: 322px;
+  padding: 20px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px 10px 20px 10px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.description_wrap::before {
+  position: absolute;
+  top: 251px;
+  right: 15px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  content: '';
+  background-color: rgb(233, 233, 233);
+  border-radius: 0 100% 0 100%;
+  transform: scale(6, 5) rotate(-47deg);
+}
+
+.description_wrap .close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.description_wrap ul li {
+  padding: 8px 0;
+  font-size: 10px;
+}
+
+.description_wrap ul li i:hover {
+  color: rgb(6, 139, 35);
+}

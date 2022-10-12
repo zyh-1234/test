@@ -1,0 +1,31 @@
+@media (max-width: 1570px) {
+  .login_wrap {
+    width: 1080px !important;
+  }
+}
+
+@media (max-width: 1080px) {
+  .login_wrap {
+    width: 960px !important;
+  }
+}
+
+.login_wrap {
+  display: flex;
+  width: 70%;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: #f3f3f3;
+  transition: all ease 0.5s;
+}
+
+.login_left {
+  flex: 1;
+}
+
+.login_right {
+  width: 28%;
+  padding: 40px;
+  margin-left: 20px;
+  background-color: white;
+}

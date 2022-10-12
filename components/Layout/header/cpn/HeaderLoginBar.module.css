@@ -1,0 +1,30 @@
+.loginbar_wrap {
+  cursor: pointer;
+}
+
+.loginbar_wrap:hover {
+  color: #e2c082;
+}
+
+.loginbar {
+  display: flex;
+}
+
+.login_icon {
+  display: flex;
+  align-items: center;
+}
+
+.login_icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.login_title {
+  margin-left: 8px;
+}
+
+.login_title p {
+  height: 25px;
+  line-height: 25px;
+}

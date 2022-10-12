@@ -1,0 +1,112 @@
+.filter_current_wrap p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.filter_current {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.filter_current li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+  border: 1px solid rgb(189, 189, 189);
+}
+
+.filter_current li:last-child {
+  border: none;
+}
+
+.clear {
+  position: absolute;
+  top: 50%;
+  right: 9px;
+  display: inline-block;
+  width: 09px;
+  height: 9px;
+  margin-left: 17px;
+  font-size: 0;
+  color: #414042;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.630175 0.630175C0.803741 0.456608 1.08515 0.456608 1.25871 0.630175L8.36983 7.74129C8.54339 7.91485 8.54339 8.19626 8.36983 8.36983C8.19626 8.54339 7.91485 8.54339 7.74129 8.36983L0.630175 1.25871C0.456609 1.08515 0.456609 0.803741 0.630175 0.630175Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.36983 0.630175C8.19626 0.456608 7.91485 0.456608 7.74129 0.630175L0.630175 7.74129C0.456608 7.91485 0.456608 8.19626 0.630175 8.36983C0.803742 8.54339 1.08515 8.54339 1.25871 8.36983L8.36983 1.25871C8.54339 1.08515 8.54339 0.803741 8.36983 0.630175Z' fill='black'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: medium none;
+  transform: translate(0, -50%);
+}
+
+.title {
+  border-bottom: 1px solid #999;
+}
+
+.jiantou {
+  display: block;
+  float: right;
+  width: 15px;
+  height: 15px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transition: all ease 0.3s;
+  transform: rotate(-45deg);
+}
+
+.filtration_ul_1 p {
+  padding: 20px;
+}
+
+.filtration_ul_2 {
+  display: none;
+}
+
+.filtration_ul_2,
+.filtration_ul_3 {
+  margin-left: 10px;
+}
+
+.filtration_li_3 {
+  display: inline-block;
+  width: 45px;
+  color: transparent;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.filtration_li_3 p {
+  padding: 0;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  transform: scale(0.8, 0.8);
+}
+
+.filter_current li p {
+  transform: scale(0.8, 0.8);
+}
+
+.filtration_ul_1 p:hover {
+  color: bisque;
+}
+
+.filtration_li_3:hover {
+  color: rgb(173, 173, 173);
+}
+
+.filtration_li_3 img {
+  padding: 2px;
+  border: 1px solid transparent;
+}
+
+.filtration_li_3 img:hover {
+  border: 1px solid rgb(173, 173, 173);
+}
+
+.filtration_li_3_span {
+  text-align: center;
+}

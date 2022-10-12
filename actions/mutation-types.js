@@ -1,0 +1,42 @@
+// login page
+export const QUERY_LOGIN_PAGE_CONTENT = 'QUERY_LOGIN_PAGE_CONTENT'
+
+export const UPDATE_LOGIN_STATUS = 'UPDATE_LOGIN_STATUS'
+
+export const QUERY_USERINFO = 'QUERY_USERINFO'
+
+export const UPDATE_USERINFO = 'UPDATE_USERINFO'
+
+// order list
+export const ADD_ORDER = 'ADD_ORDER'
+
+export const REMOVE_ORDER = 'REMOVE_ORDER'
+
+export const EDIT_ORDER = 'EDIT_ORDER'
+
+export const EDIT_ORDER_STAMP = 'EDIT_ORDER_STAMP'
+
+export const EDIT_ORDER_NOTE = 'EDIT_ORDER_NOTE'
+
+export const QUERY_ORDER_LIST = 'QUERY_ORDER_LIST'
+
+export const UPDATE_ORDER_LIST = 'UPDATE_ORDER_LIST'
+
+// home page
+export const FILTER_ALL_DATA = 'FILTER_ALL_DATA'
+
+export const FILTER_SUCCESS_STATUS = 'FILTER_SUCCESS_STATUS'
+
+export const FILTER_FAIL_STATUS = 'FILTER_FAIL_STATUS'
+
+export const UPDATE_FILTER_STATUS = 'UPDATE_FILTER_STATUS'
+
+export const ASYNC_QUERY_RESELECT_LIST = 'ASYNC_QUERY_RESELECT_LIST'
+
+// global config
+export const SHOW_SIDE_BAR = 'SHOW_SIDE_BAR'
+
+export const QUERY_GLOBAL_CONFIG = 'QUERY_GLOBAL_CONFIG'
+
+// nav
+export const ASYNC_QUERY_NAV_DATA = 'ASYNC_QUERY_NAV_DATA'

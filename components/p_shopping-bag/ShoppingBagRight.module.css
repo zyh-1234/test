@@ -1,0 +1,110 @@
+.shopping_bag_right {
+  width: 300px;
+  min-width: 225px;
+  margin-left: 50px;
+  font-size: 10px;
+}
+
+.content {
+  padding: 15px 15px 0;
+  border: 1px solid #e3e3e3;
+}
+
+.title {
+  padding-bottom: 5px;
+  font-size: 24px;
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+
+.order_detail {
+  padding: 6px;
+}
+
+.price,
+.discount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price span,
+.discount span {
+  padding: 5px 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 700;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.description_sec span {
+  padding: 5px 0;
+  text-indent: 1em;
+}
+
+.total span:last-child {
+  font-weight: 500;
+}
+
+.checkbox_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.question_icon {
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.question_icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.send {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  background-color: #9c231b;
+}
+
+.send:hover {
+  background-color: #740e07;
+}
+
+.download {
+  margin-top: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.description_wrap {
+  padding: 10px;
+  margin-top: 50px;
+  border: 1px solid #ccc;
+  transition: all ease 0.5s;
+}
+
+.description_sec {
+  margin-top: 5px;
+}
+
+.description_sec span:nth-child(3),
+.description_sec span:nth-child(4) {
+  display: inline-block;
+}
+
+.description_sec span:nth-child(4) {
+  padding-bottom: 0;
+}

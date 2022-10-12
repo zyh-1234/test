@@ -1,0 +1,262 @@
+html {
+  font-size: 0.52087vw !important;
+}
+
+/*
+
+   ?vw 1px=0.1px
+
+  */
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.15px;
+  cursor: default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* 清除input number 箭头 */
+
+/* chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* 火狐浏览器 */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type='search']::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type='search']::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the 'X' from Chrome */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+:root {
+  --main-bg-color: red;
+}
+
+.border-b-1px,
+.border-t-1px,
+.border-all-1px {
+  position: relative;
+}
+
+/* 四周1px */
+.border-all-1px::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border: solid 1px #e6e6e6;
+}
+
+.border-b-1px::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  color: #e6e6e6;
+  content: ' ';
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.border-l-1px::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  color: #e6e6e6;
+  content: ' ';
+  border-left: 1px solid #e6e6e6;
+}
+
+.border-t-1px::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  color: #e6e6e6;
+  content: ' ';
+  border-top: 1px solid #e6e6e6;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-resolution: 2dppx) {
+  .border-b-1px::after {
+    transform: scaleY(0.5);
+  }
+
+  .border-t-1px::before {
+    transform: scaleY(0.5);
+  }
+
+  .border-all-1px {
+    border: none !important;
+  }
+
+  .border-all-1px::before {
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+
+    /* position: absolute;
+    box-sizing: border-box;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    border: solid 1px #e6e6e6; */
+    transform-origin: left top;
+  }
+}
+
+@media (min-resolution: 3dppx) {
+  .border-b-1px::after {
+    transform: scaleY(0.34);
+  }
+
+  .border-t-1px::before {
+    transform: scaleY(0.34);
+  }
+}
+
+/* home nav current style */
+.curNav {
+  position: relative;
+}
+
+.curNav::before {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  content: '';
+  background: linear-gradient(to right, white, #e2c082, white);
+}
+
+.home-collections .slick-list {
+  margin-left: -20px;
+}
+
+.home-collections .slick-track {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-collections .slick-slide {
+  box-sizing: content-box;
+  flex: 1;
+  margin-left: 20px;
+}
+
+.home-collections .slick-slide img {
+  width: 100% !important;
+}
+
+.chain_page_style ul {
+  flex-direction: column !important;
+}
+
+.chain_page_style ul li {
+  width: 100% !important;
+}
+
+.ant-input {
+  -webkit-appearance: none;
+  caret-color: #0719c0;
+  border: 1px solid #e6e6e6;
+  outline: none;
+
+  /* -webkit-tap-highlight-color: red; */
+
+  /* ime-mode: active; */
+}
+
+.ant-input:hover {
+  border: 1px solid #e6e6e6;
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled) {
+  border: 1px solid #e6e6e6;
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  border: 1px solid #e6e6e6;
+}
+
+/* .ant-input-affix-wrapper-focused {
+  box-shadow: none;
+}
+
+.ant-input-affix-wrapper-focused:hover {
+  border: 1px solid #e6e6e6;
+} */

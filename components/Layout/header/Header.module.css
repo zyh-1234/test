@@ -1,0 +1,46 @@
+.header {
+  min-width: 960px;
+
+  /* background-color: #1c1a26; */
+  background-color: #9c231b;
+}
+
+.top_campaign_wrap {
+  color: white;
+  text-align: center;
+
+  /* background-color: #9c231b; */
+  background-color: #1c1a26;
+}
+
+.top_campaign_wrap_title {
+  padding: 8.5px 0;
+  font-size: 10px;
+}
+
+.header_head_wrap {
+  padding: 8px 0;
+  font-size: 12px;
+  color: white;
+  border-bottom: 1px solid rgba(58, 2, 2, 0.3);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header_content_wrap {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}

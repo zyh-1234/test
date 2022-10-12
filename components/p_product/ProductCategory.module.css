@@ -1,0 +1,50 @@
+@media (max-width: 1260px) {
+  .container {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 860px !important;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto 50px;
+  transition: all ease 0.4s;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.detail .filter {
+  width: 25%;
+  min-width: 20%;
+  margin-right: 20px;
+}
+
+.product_list_fix {
+  flex: 1;
+}
+
+.product_list_fix .result {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.product_list_fix .ul_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.product_list_fix .ul_box li {
+  width: 33.33%;
+}

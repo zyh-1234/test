@@ -1,0 +1,15 @@
+.register_form_wrap {
+  margin-top: 40px;
+}
+
+.register_botton {
+  width: 100%;
+  background-color: #b00024 !important;
+  border: none;
+}
+
+.register_botton:hover {
+  width: 100%;
+  background-color: #7e0019 !important;
+  border: none;
+}

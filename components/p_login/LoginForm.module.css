@@ -1,0 +1,32 @@
+.login_form {
+  border-bottom: 1px solid #333;
+}
+
+.login_button {
+  width: 100%;
+  background-color: #b00024 !important;
+  border: none;
+}
+
+.login_button:hover {
+  width: 100%;
+  background-color: #7e0019 !important;
+  border: none;
+}
+
+.flag_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-items: center;
+  width: 100%;
+  font-size: 12px;
+}
+
+.flag {
+  width: 20px;
+  height: 10px;
+  background-color: #dbdbdb;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 1px 0 #822;
+}

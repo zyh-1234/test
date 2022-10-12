@@ -1,0 +1,32 @@
+.chain_card_wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  position: relative;
+}
+
+.chain_img {
+  background-repeat: no-repeat;
+  transition: all ease 0.5s;
+}
+
+.chain_des {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  transform: translateX(-50%);
+}
+
+.chain_des p:first-child,
+.chain_des p:last-child {
+  flex: 1;
+  text-align: center;
+}

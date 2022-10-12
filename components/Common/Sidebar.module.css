@@ -1,0 +1,31 @@
+.sidebar_wrap {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  padding: 5px 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #e2e2e2;
+  transform: translateY(-50%);
+}
+
+.sidebar {
+  padding: 5px 0;
+  margin: 15px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.sidebar svg {
+  width: 30px;
+  height: 30px;
+  color: #b6b6b6;
+}
+
+.sidebar svg:hover {
+  color: #d3190c;
+}
+
+.sidebar:last-child {
+  border: none;
+}

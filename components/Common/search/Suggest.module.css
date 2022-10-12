@@ -1,0 +1,27 @@
+.suggest_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 22px 15px #ebebeb;
+}
+
+.suggest_item {
+  padding: 10px;
+  margin: 0 20px;
+}
+
+.suggest_item:hover {
+  background-color: #ebebeb;
+}
+
+.suggest_item::after {
+  color: #ebebeb;
+  border-bottom: solid 1px #ebebeb;
+}

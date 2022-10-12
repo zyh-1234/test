@@ -1,0 +1,20 @@
+.home_landing_wrap {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+@media (max-width: 960px) {
+  .home_landing_wrap {
+    width: 90%;
+  }
+}
+
+.home_landing {
+  padding-bottom: 50px;
+}
+
+.home_landing_wrap .home_landing {
+  display: flex;
+  justify-content: space-between;
+}
