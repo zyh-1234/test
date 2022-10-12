@@ -1,0 +1,12 @@
+.section {
+  flex: 1;
+  min-width: 960px;
+  height: 2000px !important;
+}
+
+.back_top svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  transform: translateY(25%);
+}

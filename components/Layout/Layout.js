@@ -1,18 +1,16 @@
+import { Component } from 'react'
 import Footer from './footer'
 import Header from './header'
 import Head from 'next/head'
-import s from './Layout.module.css'
-import Sidebar from '@/Common/Sidebar'
-import { BackTop } from 'antd'
-import { VerticalAlignTopOutlined } from '@ant-design/icons'
-import config from '../../globalConfig/globalConfig'
-import { Component } from 'react'
+import Content from './content'
+
 import { connect } from 'react-redux'
 import { queryGlobalConfig } from 'actions/globalConfig'
 import { bindActionCreators } from 'redux'
 
 import cache from '../../utils/cache'
 
+import s from './Layout.module.css'
 @connect(
   (state) => ({ globalConfig: state.globalConfigReducer.globalConfig }),
   (dispatch) => bindActionCreators({ queryGlobalConfig }, dispatch),
@@ -20,18 +18,6 @@ import cache from '../../utils/cache'
 class Layout extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      style: {
-        height: 30,
-        width: 90,
-        lineHeight: '30px',
-        borderRadius: 4,
-        backgroundColor: config.get('theme').black.primary,
-        color: '#fff',
-        textAlign: 'center',
-        fontSize: 12,
-      },
-    }
   }
 
   componentDidMount() {
@@ -44,17 +30,8 @@ class Layout extends Component {
     cache.setCache('allColor', cpfenlei_sx)
   }
 
-  renderBackTop = () => (
-    <div style={this.state.style}>
-      <span className={s.back_top}>
-        <VerticalAlignTopOutlined />
-      </span>
-      <span>回到顶部</span>
-    </div>
-  )
-
   render() {
-    const { children, globalConfig } = this.props
+    const { globalConfig } = this.props
     const { address, callemail, calluser, config } = globalConfig
 
     return (
@@ -65,9 +42,9 @@ class Layout extends Component {
           <link rel="icon" href="https://www.fallon-fj.com/fj.png" />
         </Head>
         <Header className={s.header} />
-        <section className={s.section}>{children}</section>
-        <BackTop style={{ left: 40 }}>{this.renderBackTop()}</BackTop>
-        <Sidebar />
+
+        <Content>{this.props.children}</Content>
+
         <Footer
           className={s.footer}
           address={address}

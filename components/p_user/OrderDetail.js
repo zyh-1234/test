@@ -233,13 +233,13 @@ export default function OrderDetail() {
               cell: EditableCell,
             },
           }}
-          bordered
+          // bordered
           dataSource={data}
           columns={mergedColumns}
           rowClassName="editable-row"
           pagination={{
             onChange: cancel,
-            disabled: true,
+            // disabled: true,
           }}
         />
       </Form>
