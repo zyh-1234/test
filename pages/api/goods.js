@@ -16,11 +16,11 @@ function runMiddleware(req, res, fn) {
 export default async function (req, res) {
   await runMiddleware(req, res, cors)
   console.log(req.methods)
-  const orderList = []
+  const goodsList = []
   res.statusCode = 200
   res.json({
     msg: 'success',
     code: '0',
-    data: orderList,
+    data: goodsList,
   })
 }

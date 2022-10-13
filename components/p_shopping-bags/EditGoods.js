@@ -1,12 +1,12 @@
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons'
-import s from './OrderEdit.module.css'
+import s from './EditGoods.module.css'
 import { useEffect, useState } from 'react'
-import EditOrderText from './EditOrderText'
-import EditOrderContent from './EditOrderContent'
+import EditGoodsText from './EditGoodsText'
+import EditGoodsContent from './EditGoodsContent'
 
-export default function OrderEdit({ type, order, onCancel, onConfirm, show }) {
+export default function EditGoods({ type, goods, onCancel, onConfirm, show }) {
   const [text, setText] = useState('') //文本
-  const [orderQty, setOrderQty] = useState([]) //其他尺寸
+  const [goodsQty, setGoodsQty] = useState([]) //其他尺寸
   const [showMore, setShowMore] = useState(false) //是否显示更多尺寸
   const [chainQty, setChainQty] = useState([]) // 链条尺寸
   const [chainSize, setChainSize] = useState({ size: { width: 2, length: 0 }, count: 1 }) // 链条尺寸模型
@@ -17,11 +17,11 @@ export default function OrderEdit({ type, order, onCancel, onConfirm, show }) {
 
   const handleConfirm = () => {
     if (type === 'edit') {
-      order.type
+      goods.type
         ? chainQty.length
           ? onConfirm(chainQty, 'edit')
           : onConfirm('', '')
-        : onConfirm(orderQty, type) //其他产品修改确认
+        : onConfirm(goodsQty, type) //其他产品修改确认
     } else {
       onConfirm(text, type)
     }
@@ -36,12 +36,12 @@ export default function OrderEdit({ type, order, onCancel, onConfirm, show }) {
   }
 
   useEffect(() => {
-    setText(order[type])
-    order.qty && setOrderQty(order.qty)
-    order.qty && order.qty.slice(6, order.qty.length).reduce((c, p) => c + p.count, 0) === 0
+    setText(goods[type])
+    goods.qty && setGoodsQty(goods.qty)
+    goods.qty && goods.qty.slice(6, goods.qty.length).reduce((c, p) => c + p.count, 0) === 0
       ? setShowMore(false)
       : setShowMore(true)
-  }, [order.qty, order, type])
+  }, [goods.qty, goods, type])
 
   return (
     <div
@@ -53,19 +53,19 @@ export default function OrderEdit({ type, order, onCancel, onConfirm, show }) {
       }}>
       <div className={s.container}>
         {type === 'edit' ? (
-          <EditOrderContent
-            order={order}
+          <EditGoodsContent
+            goods={goods}
             chainSize={chainSize}
             setChainSize={setChainSize}
             chainQty={chainQty}
             setChainQty={setChainQty}
-            orderQty={orderQty}
-            setOrderQty={setOrderQty}
+            goodsQty={goodsQty}
+            setGoodsQty={setGoodsQty}
             showMore={showMore}
             setShowMore={setShowMore}
           />
         ) : (
-          <EditOrderText text={text} type={type} handleChange={handleChange} />
+          <EditGoodsText text={text} type={type} handleChange={handleChange} />
         )}
         <div className={s.control}>
           <div className={s.cancel} onClick={handleCancel}>

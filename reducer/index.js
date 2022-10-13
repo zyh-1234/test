@@ -3,14 +3,14 @@ import reSelectReducer from './reselect'
 import loginPageReducer from './login'
 import productReducer from './product'
 
-import orderReducer from './order'
+import goodsReducer from './goods'
 import userPageReducer from './user'
 import navDataReducer from './nav'
 import globalConfigReducer from './globalConfig'
 
 export default combineReducers({
   reSelectReducer,
-  orderReducer,
+  goodsReducer,
   loginPageReducer,
   userPageReducer,
   productReducer,

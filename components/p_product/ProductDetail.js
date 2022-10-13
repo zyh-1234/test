@@ -5,7 +5,7 @@ import ProductQuestionsDes from './ProductQuestionsDes'
 import { useState } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { addOrder } from 'actions/order'
+import { addGoods } from 'actions/goods'
 import { ShoppingCartOutlined, QuestionOutlined } from '@ant-design/icons'
 import { mapDataToStoneList, mapDataToColorList } from 'utils/mapData'
 import s from './ProductDetail.module.css'
@@ -20,7 +20,7 @@ const mapDropdownType = {
   WIDTH: 'width',
 }
 
-const ProductDetail = ({ setShowDetail, title, dataLists, type, addOrder }) => {
+const ProductDetail = ({ setShowDetail, title, dataLists, type, addGoods }) => {
   const [currentProduct, setCurrentProduct] = useState(dataLists.xx[0]) //默认展示第一条
   const [showDes, setShowDes] = useState(false)
   const [size, setSize] = useState('9#')
@@ -211,7 +211,7 @@ const ProductDetail = ({ setShowDetail, title, dataLists, type, addOrder }) => {
     const price = Number(dataLists.price)
     const _currentProduct = JSON.parse(JSON.stringify(currentProduct))
     isChain
-      ? addOrder({
+      ? addGoods({
           ..._currentProduct,
           qty: [{ size: { width: 2, length }, count }],
           price,
@@ -220,7 +220,7 @@ const ProductDetail = ({ setShowDetail, title, dataLists, type, addOrder }) => {
           type: 'chain',
           name: 110,
         })
-      : addOrder({ ..._currentProduct, qty, price, stamp: '', note: '', name: 110 })
+      : addGoods({ ..._currentProduct, qty, price, stamp: '', note: '', name: 110 })
 
     // 提示信息
     notification.success({
@@ -365,6 +365,6 @@ const ProductDetail = ({ setShowDetail, title, dataLists, type, addOrder }) => {
 
 // const mapStateToProps = (state) => ({ orderList: state.orderReducer.orderList })
 
-const mapDispathToProps = (dispatch) => bindActionCreators({ addOrder }, dispatch)
+const mapDispathToProps = (dispatch) => bindActionCreators({ addGoods }, dispatch)
 
 export default connect(null, mapDispathToProps)(ProductDetail)

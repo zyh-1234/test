@@ -2,8 +2,8 @@ import * as types from '../../actions/mutation-types'
 import produce from 'immer'
 
 const initialState = {
-  orderList: [],
-  orderDesText: {
+  goodsList: [],
+  goodsDesText: {
     title: 'SHOPPING BAG',
     backTo: ' Continue Shopping',
     toUrl: '/product/detail/10002',
@@ -37,53 +37,53 @@ const initialState = {
 }
 
 const mutations = {
-  [types.QUERY_ORDER_LIST](state, action) {
+  [types.QUERY_GOODS_LIST](state, action) {
     return produce(state, (draftState) => {
-      draftState.orderList = [...action.payload]
+      draftState.goodsList = [...action.payload]
     })
   },
-  [types.UPDATE_ORDER_LIST](state, action) {
+  [types.UPDATE_GOODS_LIST](state, action) {
     return produce(state, (draftState) => {
-      draftState.orderList = [...action.payload]
+      draftState.goodsList = [...action.payload]
     })
   },
-  [types.ADD_ORDER](state, action) {
+  [types.ADD_GOODS](state, action) {
     return produce(state, (draftState) => {
-      draftState.orderList.unshift(action.payload)
+      draftState.goodsList.unshift(action.payload)
     })
   },
-  [types.REMOVE_ORDER](state, action) {
+  [types.REMOVE_GOODS](state, action) {
     return produce(state, (draftState) => {
-      draftState.orderList.splice(action.payload, 1)
+      draftState.goodsList.splice(action.payload, 1)
     })
   },
-  [types.EDIT_ORDER](state, action) {
+  [types.EDIT_GOODS](state, action) {
     const {
       payload: { index, value },
     } = action
     return produce(state, (draftState) => {
-      draftState.orderList[index].qty = value
+      draftState.goodsList[index].qty = value
     })
   },
-  [types.EDIT_ORDER_STAMP](state, action) {
+  [types.EDIT_GOODS_STAMP](state, action) {
     const {
       payload: { id, value = [] },
     } = action
     return produce(state, (draftState) => {
-      draftState.orderList.find((item) => item.id === id).stamp = value
+      draftState.goodsList.find((item) => item.id === id).stamp = value
     })
   },
-  [types.EDIT_ORDER_NOTE](state, action) {
+  [types.EDIT_GOODS_NOTE](state, action) {
     const {
       payload: { id, value },
     } = action
     return produce(state, (draftState) => {
-      draftState.orderList.find((item) => item.id === id).note = value
+      draftState.goodsList.find((item) => item.id === id).note = value
     })
   },
 }
 
-export default function orderReducer(state = initialState, action) {
+export default function goodsReducer(state = initialState, action) {
   if (!mutations[action.type]) return state
   return mutations[action.type](state, action)
 }

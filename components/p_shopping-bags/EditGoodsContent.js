@@ -1,23 +1,23 @@
-import s from './EditOrderContent.module.css'
+import s from './EditGoodsContent.module.css'
 
-export default function EditOrderContent({
-  order,
+export default function EditGoodsContent({
+  goods,
   chainSize,
   setChainSize,
   chainQty,
   setChainQty,
-  orderQty,
-  setOrderQty,
+  goodsQty,
+  setGoodsQty,
   showMore,
   setShowMore,
 }) {
-  const { code, name, img } = order
+  const { code, name, img } = goods
 
   const handleAdd = () => {
     if (chainSize.size.width && chainSize.size.length) {
       if (chainQty.length === 0) {
         // 整合
-        setChainQty(chainQty.concat(order.qty).concat([chainSize]))
+        setChainQty(chainQty.concat(goods.qty).concat([chainSize]))
       } else {
         setChainQty(chainQty.concat([chainSize]))
       }
@@ -36,7 +36,7 @@ export default function EditOrderContent({
   const handleChainCountChange = (e, index, init) => {
     if (init) {
       // 不增加尺寸 直接修改原尺寸的情况
-      setChainQty(chainQty.concat(order.qty))
+      setChainQty(chainQty.concat(goods.qty))
     } else {
       const _chainQty = JSON.parse(JSON.stringify(chainQty))
       _chainQty[index].count = Number(e.currentTarget.value >= 0 ? e.currentTarget.value : 0)
@@ -49,7 +49,7 @@ export default function EditOrderContent({
     _qty.find((item) => item.id === id).count = Number(
       e.currentTarget.value >= 0 ? e.currentTarget.value : 0,
     )
-    setOrderQty(_qty)
+    setGoodsQty(_qty)
   }
 
   const handleChainClean = (index) => {
@@ -72,7 +72,7 @@ export default function EditOrderContent({
             display: 'flex',
             alignItems: 'center',
           }}>
-          {order.type ? (
+          {goods.type ? (
             <p className={s.back_img} style={{ backgroundImage: `url(${img})` }}></p>
           ) : (
             <img src={img} alt={name} />
@@ -83,7 +83,7 @@ export default function EditOrderContent({
         </div>
       </div>
       <div className={s.edit_content_right}>
-        {order.type ? (
+        {goods.type ? (
           <div className={s.size_content}>
             <div className={s.top}>
               <div>Qty:</div>
@@ -161,7 +161,7 @@ export default function EditOrderContent({
                     overflow: 'hidden',
                     overflowY: 'scroll',
                   }}>
-                  {order.qty.map((item, index) => (
+                  {goods.qty.map((item, index) => (
                     <li key={`${index}-${item.size}`}>
                       <p>
                         <span>
@@ -188,15 +188,15 @@ export default function EditOrderContent({
             </div>
             <div className={s.middle}>
               <ul>
-                {orderQty.length &&
-                  orderQty.slice(0, 6).map((item, index) => (
+                {goodsQty.length &&
+                  goodsQty.slice(0, 6).map((item, index) => (
                     <li key={`${index}-${item.size}`}>
                       <span>
                         <input
                           style={{ outline: 'none' }}
                           type="number"
                           value={item.count || ''}
-                          onChange={(e) => handleCountChange(e, order.qty, item.id)}
+                          onChange={(e) => handleCountChange(e, goods.qty, item.id)}
                         />
                       </span>
                       <span>*12 </span>
@@ -205,15 +205,15 @@ export default function EditOrderContent({
                   ))}
               </ul>
               <ul style={{ display: showMore ? 'block' : 'none', color: 'red' }}>
-                {orderQty.length &&
-                  orderQty.slice(6, order.qty.length).map((item, index) => (
+                {goodsQty.length &&
+                  goodsQty.slice(6, goods.qty.length).map((item, index) => (
                     <li key={`${index}-${item.size}`}>
                       <span>
                         <input
                           style={{ outline: 'none', borderColor: 'red' }}
                           type="number"
                           value={item.count || ''}
-                          onChange={(e) => handleCountChange(e, order.qty, item.id)}
+                          onChange={(e) => handleCountChange(e, goods.qty, item.id)}
                         />
                       </span>
                       <span>*12 </span>

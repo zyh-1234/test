@@ -1,8 +1,8 @@
 import { Input } from 'antd'
 const { TextArea } = Input
-import s from './EditOrderText.module.css'
+import s from './EditGoodsText.module.css'
 
-export default function EditOrderText({ type, text, handleChange }) {
+export default function EditGoodsText({ type, text, handleChange }) {
   return (
     <div className={s.edit_text_wrap}>
       <div className={s.title}>

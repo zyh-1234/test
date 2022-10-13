@@ -7,20 +7,20 @@ export const QUERY_USERINFO = 'QUERY_USERINFO'
 
 export const UPDATE_USERINFO = 'UPDATE_USERINFO'
 
-// order list
-export const ADD_ORDER = 'ADD_ORDER'
+// GOODS list
+export const ADD_GOODS = 'ADD_GOODS'
 
-export const REMOVE_ORDER = 'REMOVE_ORDER'
+export const REMOVE_GOODS = 'REMOVE_GOODS'
 
-export const EDIT_ORDER = 'EDIT_ORDER'
+export const EDIT_GOODS = 'EDIT_GOODS'
 
-export const EDIT_ORDER_STAMP = 'EDIT_ORDER_STAMP'
+export const EDIT_GOODS_STAMP = 'EDIT_GOODS_STAMP'
 
-export const EDIT_ORDER_NOTE = 'EDIT_ORDER_NOTE'
+export const EDIT_GOODS_NOTE = 'EDIT_GOODS_NOTE'
 
-export const QUERY_ORDER_LIST = 'QUERY_ORDER_LIST'
+export const QUERY_GOODS_LIST = 'QUERY_GOODS_LIST'
 
-export const UPDATE_ORDER_LIST = 'UPDATE_ORDER_LIST'
+export const UPDATE_GOODS_LIST = 'UPDATE_GOODS_LIST'
 
 // home page
 export const FILTER_ALL_DATA = 'FILTER_ALL_DATA'

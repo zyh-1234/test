@@ -1,8 +1,8 @@
 import Loupe from '@/Common/Loupe'
 import { mapCodeToName } from 'utils/mapData'
-import s from './OrderCard.module.css'
+import s from './GoodsCard.module.css'
 
-export default function OrderCard({ data, onAction }) {
+export default function GoodsCard({ data, onAction }) {
   const { code, name, price, qty, moreqty, img, type = '', id, stamp = '', note = '' } = data
 
   const handleClick = (action) => {

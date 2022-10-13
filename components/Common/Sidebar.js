@@ -4,7 +4,7 @@ import { Badge } from 'antd'
 import { connect } from 'react-redux'
 import s from './Sidebar.module.css'
 
-function Sidebar({ orderList }) {
+function Sidebar({ goodsList }) {
   return (
     <div className={s.sidebar_wrap}>
       <div className={s.sidebar}>
@@ -18,9 +18,9 @@ function Sidebar({ orderList }) {
         <WechatOutlined />
       </div>
       <div className={s.sidebar}>
-        <Link href="/shopping-bag">
+        <Link href="/shopping-bags">
           <a>
-            <Badge count={orderList.length} offset={[5, -5]}>
+            <Badge count={goodsList.length} offset={[5, -5]}>
               <ShoppingCartOutlined size="large" />
             </Badge>
           </a>
@@ -30,6 +30,6 @@ function Sidebar({ orderList }) {
   )
 }
 
-const mapStateToProps = (state) => ({ orderList: state.orderReducer.orderList })
+const mapStateToProps = (state) => ({ goodsList: state.goodsReducer.goodsList })
 
 export default connect(mapStateToProps, null)(Sidebar)

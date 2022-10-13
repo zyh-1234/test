@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 import s from './OrderDetail.module.css'
 
-export default function OrderDetail() {
+export default function OrderDetail({ data: { tableHeads } }) {
   const originData = [
     {
       key: 1,
@@ -83,87 +83,29 @@ export default function OrderDetail() {
     }
   }
 
-  const columns = [
-    {
-      title: '序号',
-      dataIndex: 'index',
-      width: '8%',
-      editable: false,
-    },
-    {
-      title: '图片',
-      dataIndex: 'url',
-      width: '10%',
-      editable: false,
-    },
-    {
-      title: '产品条码',
-      dataIndex: 'code',
-      width: '10%',
-      editable: false,
-    },
-    {
-      title: '名称',
-      dataIndex: 'name',
-      width: '10%',
-      editable: false,
-    },
-    {
-      title: '规格',
-      dataIndex: 'size',
-      width: '5%',
-      editable: false,
-    },
-    {
-      title: '数量',
-      dataIndex: 'num',
-      width: '8%',
-      editable: true,
-    },
-    {
-      title: '单价',
-      dataIndex: 'price',
-      width: '8%',
-      editable: false,
-    },
-    {
-      title: '总价',
-      dataIndex: 'totalprice',
-      width: '8%',
-      editable: false,
-    },
-    {
-      title: '库存状态',
-      dataIndex: 'status',
-      width: '10%',
-      editable: false,
-    },
-    {
-      title: '操作',
-      dataIndex: 'operation',
-      render: (_, record) => {
-        const editable = isEditing(record)
-        return editable ? (
-          <span>
-            <Typography.Link
-              onClick={() => save(record.key)}
-              style={{
-                marginRight: 8,
-              }}>
-              保存
-            </Typography.Link>
-            <Popconfirm title="删除?" onConfirm={() => cancel(record.key)}>
-              <a>删除</a>
-            </Popconfirm>
-          </span>
-        ) : (
-          <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
-            编辑
-          </Typography.Link>
-        )
-      },
-    },
-  ]
+  tableHeads[tableHeads.length - 1].render = (_, record) => {
+    const editable = isEditing(record)
+    return editable ? (
+      <span>
+        <Typography.Link
+          onClick={() => save(record.key)}
+          style={{
+            marginRight: 8,
+          }}>
+          保存
+        </Typography.Link>
+        <Popconfirm title="删除?" onConfirm={() => cancel(record.key)}>
+          <a>删除</a>
+        </Popconfirm>
+      </span>
+    ) : (
+      <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>
+        编辑
+      </Typography.Link>
+    )
+  }
+
+  const columns = [...tableHeads]
 
   const EditableCell = ({
     editing,
