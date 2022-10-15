@@ -3,7 +3,14 @@ import { QuestionOutlined } from '@ant-design/icons'
 import s from './ShoppingBagRight.module.css'
 import { useState } from 'react'
 
-export default function ShoppingBagRight({ price, value, onChange, description, contentText }) {
+export default function ShoppingBagRight({
+  price,
+  value,
+  onChange,
+  description,
+  contentText,
+  onClickSend,
+}) {
   const [showDes, setShowDes] = useState(false) //显示表单状态说明
 
   return (
@@ -39,7 +46,9 @@ export default function ShoppingBagRight({ price, value, onChange, description, 
               <QuestionOutlined />
             </div>
           </div>
-          <div className={s.send}>{contentText.sendButton}</div>
+          <div className={s.send} onClick={onClickSend}>
+            {contentText.sendButton}
+          </div>
           <div className={s.download}>{contentText.downloadButton}</div>
         </div>
       </div>

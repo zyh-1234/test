@@ -1,11 +1,12 @@
 import axios from 'axios'
-// import { Alert, Spin } from 'antd'
+// import { message } from 'antd'
 
 class MyRequest {
   constructor(options) {
     this.config = options
     this.interceptorHooks = options.interceptorHooks
     this.showLoading = options.showLoading
+    this.loadingkey = 'updatable'
     this.instance = axios.create(options)
     this.setupInterceptor()
   }
@@ -21,29 +22,28 @@ class MyRequest {
     )
 
     this.instance.interceptors.request.use((config) => {
-      if (this.showLoading) {
-        // this.loading = () => {
-        // return (
-        //   <Spin tip="Loading...">
-        //     <Alert
-        //       message="Alert message title"
-        //       description="Further details about the context of this alert."
-        //       type="info"
-        //     />
-        //   </Spin>
-        // )
-        // }
-      }
+      // if (!this.showLoading) {
+      //   message.loading({
+      //     content: 'Loading...',
+      //     key: this.loadingkey,
+      //   })
+      // }
       return config
     })
 
     this.instance.interceptors.response.use(
       (res) => {
-        this.loading?.close()
+        // message.success({
+        //   content: 'Loaded',
+        //   key: this.loadingkey,
+        // })
         return res
       },
       (err) => {
-        this.loading?.close()
+        // message.success({
+        //   content: 'Loaded',
+        //   key: this.loadingkey,
+        // })
         return err
       },
     )

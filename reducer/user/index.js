@@ -77,7 +77,7 @@ const initialState = {
         },
         {
           title: '图片',
-          dataIndex: 'url',
+          dataIndex: 'img',
           width: '10%',
           editable: false,
         },
@@ -101,7 +101,7 @@ const initialState = {
         },
         {
           title: '数量',
-          dataIndex: 'num',
+          dataIndex: 'count',
           width: '8%',
           editable: true,
         },

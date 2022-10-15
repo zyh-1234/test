@@ -89,7 +89,7 @@ class Login extends Component {
     updateLoginStatus(true)
     // 4.修改国际化
     // 5.跳转订单页/首页
-    router.push('/shopping-bag')
+    router.push('/shopping-bags')
   }
 
   onRegister = (values) => {

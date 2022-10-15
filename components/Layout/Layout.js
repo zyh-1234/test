@@ -8,8 +8,6 @@ import { connect } from 'react-redux'
 import { queryGlobalConfig } from 'actions/globalConfig'
 import { bindActionCreators } from 'redux'
 
-import cache from '../../utils/cache'
-
 import s from './Layout.module.css'
 @connect(
   (state) => ({ globalConfig: state.globalConfigReducer.globalConfig }),
@@ -21,13 +19,8 @@ class Layout extends Component {
   }
 
   componentDidMount() {
-    // queryGlobalConfig()
-    const { globalConfig } = this.props
-
-    const { cpfenlei_lx, cpfenlei_st, cpfenlei_sx } = globalConfig
-    cache.setCache('allStone', cpfenlei_st)
-    cache.setCache('allCategory', cpfenlei_lx)
-    cache.setCache('allColor', cpfenlei_sx)
+    const { queryGlobalConfig } = this.props
+    queryGlobalConfig()
   }
 
   render() {

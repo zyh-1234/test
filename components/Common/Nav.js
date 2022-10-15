@@ -51,14 +51,19 @@ const Nav = ({ navData = [], asyncQueryNavData }) => {
               <span
                 className={item.id === showNavData.id ? 'curNav' : ''}
                 onClick={() => setShowMask(false)}>
-                <Link
-                  href={{ pathname: '/product/category/[id]', query: { type: '' } }}
-                  as={`/product/category/${item.id}?type=${item.type}`}>
-                  {item.name}
-                </Link>
-                {/* <Link href="/product/category/[id]" as={`/product/category/${item.id}`}>
-                  {item.name}
-                </Link> */}
+                {item.type === 'chain' ? (
+                  <Link
+                    href={{ pathname: '/chain/[id]', query: { type: '' } }}
+                    as={`/chain/${item.id}?type=${item.type}`}>
+                    {item.name}
+                  </Link>
+                ) : (
+                  <Link
+                    href={{ pathname: '/product/[id]', query: { type: '' } }}
+                    as={`/product/${item.id}?type=${item.type}`}>
+                    {item.name}
+                  </Link>
+                )}
               </span>
             </li>
           ))}

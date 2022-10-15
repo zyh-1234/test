@@ -1,10 +1,21 @@
 import { useState } from 'react'
 import s from './Toolbar.module.css'
 
-export default function Toolbar({ chooseList, choose, onChange }) {
+export default function Toolbar({ onChange }) {
+  const [choose, setChoose] = useState({ id: 5, name: '按人气' })
+
+  const chooseList = [
+    { id: 1, name: '价格↑' },
+    { id: 2, name: '价格↓' },
+    { id: 3, name: '最新' },
+    { id: 4, name: '相关' },
+    { id: 5, name: '按人气' },
+  ]
   const [showChoose, setShowChoose] = useState(false)
   const handeClick = (item) => {
     onChange(item)
+    const _choose = Object.assign({}, item)
+    setChoose(_choose)
     setShowChoose(false)
   }
   return (

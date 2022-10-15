@@ -92,54 +92,6 @@
   transform: scale(0.7, 0.7);
 }
 
-/* ========== chain page style start ============= */
-
-.chain_content_wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 680px;
-  padding: 20px 0;
-}
-
-.head_img {
-  width: 680px;
-  height: 170px;
-}
-
-.chain_choose_list_wrap {
-  position: relative;
-  width: 70%;
-}
-
-.chain_choose_list {
-  float: left;
-  width: 144px;
-  margin-right: 20px;
-}
-
-.chain_choose_list:first-child {
-  float: none;
-  margin: 0 34.5%;
-}
-
-.chain_choose_list:nth-child(4) {
-  margin-right: 0 !important;
-}
-
-.chain_choose_list:last-child {
-  margin: 20px 34.5%;
-}
-
-.chain_content_wrap .des {
-  position: absolute;
-  bottom: 150px;
-  left: 100px;
-  z-index: -1;
-  font-size: 12px;
-  transform: scale(0.9, 0.9);
-}
-
 .content_bottom {
   display: flex;
   justify-content: space-between;

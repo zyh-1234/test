@@ -4,58 +4,18 @@ import HomeCustomise from '@/p_home/HomeCustomise'
 import HomeLanding from '@/p_home/HomeLanding'
 import HomeCollection from '@/p_home/HomeCollection'
 import HomeExplore from '@/p_home/HomeExplore'
-// import {
-//   getHomeBanner,
-//   getHomePromotion,
-//   getHomeRegion,
-//   getHomeStylistic,
-//   getHomeHot,
-//   getHomeElement,
-//   getHomeTheme,
-// } from 'core/service/home'
+import {
+  getHomeBanner,
+  // getHomePromotion,
+  // getHomeRegion,
+  // getHomeStylistic,
+  // getHomeHot,
+  // getHomeElement,
+  // getHomeTheme,
+} from 'core/service/home'
 
-export default function Home() {
-  const mockBannerData = {
-    banners: [
-      {
-        id: 1001,
-        title: 'test text 1',
-        img: 'https://www.fallon-fj.com/bk_img/20180619/dea30effef6a231e8d1736989f1148d8.jpg',
-      },
-      {
-        id: 1002,
-        title: 'test text 2',
-        img: 'https://www.fallon-fj.com/bk_img/20180619/be6649ff0f2dbbc52ccbc816045bd23a.jpg',
-      },
-      {
-        id: 1003,
-        title: 'test text 3',
-        img: '../img/banner4.jpeg',
-      },
-      {
-        id: 1004,
-        title: 'test text 4',
-        img: 'https://www.fallon-fj.com/bk_img/20180619/84f32a083328e6b36ab976a8cd8c2f82.jpg',
-      },
-    ],
-  }
-  const mockCustomiseData = [
-    {
-      icon: '../../img/icon2.png',
-      title: '环保无害',
-      des: '产品不含有镍，健康而且不过敏',
-    },
-    {
-      icon: '../../img/icon3.png',
-      title: '经久耐戴',
-      des: '佛隆产品几乎不氧化或变暗褪色',
-    },
-    {
-      icon: '../../img/icon1.png',
-      title: '定制服务',
-      des: '请联系我们以定制你想要的款式',
-    },
-  ]
+export default function Home({ data }) {
+  const { bannerRes } = data
   const mockLandingData = [
     {
       title: '链条',
@@ -207,8 +167,8 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <HomeBanner data={mockBannerData} />
-      <HomeCustomise data={mockCustomiseData} />
+      <HomeBanner data={bannerRes} />
+      <HomeCustomise />
       <HomeLanding data={mockLandingData} />
       <HomeCollection data={mockHomehotData} />
       <HomeCollection data={mockHomecuxiaoData} />
@@ -217,26 +177,25 @@ export default function Home() {
   )
 }
 
-// export async function getServerSideProps() {
-//   const bannerRes = await getHomeBanner()
-//   const promtionRes = await getHomePromotion()
-//   const regionRes = await getHomeRegion()
-//   const stylisticRes = await getHomeStylistic()
-//   const hotRes = await getHomeHot()
-//   const elementRes = await getHomeElement()
-//   const themeRes = await getHomeTheme()
-//   console.log(bannerRes, promtionRes, regionRes, stylisticRes, hotRes, elementRes, themeRes)
-//   return {
-//     props: {
-//       data: {
-//         bannerRes,
-//         promtionRes,
-//         regionRes,
-//         stylisticRes,
-//         hotRes,
-//         elementRes,
-//         themeRes,
-//       },
-//     },
-//   }
-// }
+export async function getServerSideProps() {
+  const bannerRes = await getHomeBanner()
+  // const promtionRes = await getHomePromotion()
+  // const regionRes = await getHomeRegion()
+  // const stylisticRes = await getHomeStylistic()
+  // const hotRes = await getHomeHot()
+  // const elementRes = await getHomeElement()
+  // const themeRes = await getHomeTheme()
+  return {
+    props: {
+      data: {
+        bannerRes,
+        // promtionRes,
+        // regionRes,
+        // stylisticRes,
+        // hotRes,
+        // elementRes,
+        // themeRes,
+      },
+    },
+  }
+}

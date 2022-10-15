@@ -3,7 +3,7 @@ import ReactSlick from 'react-slick'
 import s from './HomeBanner.module.css'
 
 const HomeBanner = ({ data = {} }) => {
-  const { banners } = data
+  const banners = [...data]
   const isSwiperable = !!(banners && banners.length)
 
   function CustomNextArrow(props) {
@@ -47,7 +47,7 @@ const HomeBanner = ({ data = {} }) => {
             {/* 跳转链接 */}
             <Link href="/details/[id]" as={`/details/${item.id}`}>
               {/* banner图片 */}
-              <img src={item.img} key={index} alt={item.title} />
+              <img src={item.img} key={index} alt={item.ig} />
             </Link>
           </div>
         ))}

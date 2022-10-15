@@ -222,14 +222,6 @@ button {
   width: 100% !important;
 }
 
-.chain_page_style ul {
-  flex-direction: column !important;
-}
-
-.chain_page_style ul li {
-  width: 100% !important;
-}
-
 .ant-input {
   -webkit-appearance: none;
   caret-color: #0719c0;
