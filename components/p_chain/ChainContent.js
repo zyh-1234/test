@@ -16,11 +16,11 @@ export default function ChainContent({ data, setShowDetail, onSelectItem }) {
         </div>
         <div className={s.chain_page_style}>
           <div className={s.result}>
-            <p>找到{(data && data.dataLists && data.dataLists.length) || 0}个可定制的产品</p>
+            <p>找到{(data && data.length) || 0}个可定制的产品</p>
           </div>
           <ul className={s.ul_box}>
-            {data && data.dataLists && data.dataLists.length
-              ? data.dataLists.map((item, index) => (
+            {data && data.length
+              ? data.map((item, index) => (
                   <li key={`${item.id}-${index}`} onClick={() => handleClick(item.id)}>
                     <a>
                       <ChainCard data={item} />

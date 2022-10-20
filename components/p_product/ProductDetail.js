@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addGoods } from 'actions/goods'
 import { ShoppingCartOutlined, QuestionOutlined } from '@ant-design/icons'
-import { mapDataToStoneList, mapDataToColorList } from 'utils/mapData'
+import { mapDataToStoneList, mapDataToColorList, mapCodeToName } from 'utils/mapData'
 import s from './ProductDetail.module.css'
 
 const mapDropdownType = {
@@ -18,9 +18,10 @@ const mapDropdownType = {
   COUNT: 'count',
   LENGTH: 'length',
   WIDTH: 'width',
+  CLIP: 'clip',
 }
 
-const ProductDetail = ({ setShowDetail, title, dataLists, addGoods }) => {
+const ProductDetail = ({ setShowDetail, dataLists, addGoods }) => {
   const [currentProduct, setCurrentProduct] = useState(dataLists.xx[0]) //默认展示第一条
   const [showDes, setShowDes] = useState(false)
   const [size, setSize] = useState('9#')
@@ -43,6 +44,8 @@ const ProductDetail = ({ setShowDetail, title, dataLists, addGoods }) => {
     { title: '色系颜色', type: 'color', list: [] },
     { title: '石头颜色', type: 'stone', list: [] },
     { title: '尺寸大小', type: 'size', list: [] },
+    // { title: '链身长度', type: 'length', list: [] },
+    // { title: '夹片大小', type: 'clip', list: [] },
     { title: '选购数量', type: 'count', list: [] },
   ])
 
@@ -162,7 +165,7 @@ const ProductDetail = ({ setShowDetail, title, dataLists, addGoods }) => {
 
         <div className={s.content_wrap}>
           <div className={s.content_left}>
-            <p>{currentProduct.title}</p>
+            <p>{currentProduct.name}</p>
             <Loupe
               magnification={3}
               maxImg={currentProduct.img}
@@ -170,7 +173,7 @@ const ProductDetail = ({ setShowDetail, title, dataLists, addGoods }) => {
               title={currentProduct.title}
             />
 
-            <p>{`${currentProduct.sx.title_zh}${currentProduct.st.title_zh}${title}`}</p>
+            <p>{mapCodeToName(currentProduct.name)}</p>
           </div>
           <div className={s.content_right}>
             <div className={s.label}>

@@ -8,7 +8,7 @@ export default function HeaderSearchBar({ searchText }) {
   const pathname = router.pathname
   return (
     <>
-      <Link href="/search">
+      <Link href="/">
         <a
           style={{
             display: 'flex',

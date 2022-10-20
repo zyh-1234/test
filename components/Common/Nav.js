@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import s from './Nav.module.css'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { asyncQueryNavData } from 'actions/nav'
+// import { asyncQueryNavData } from 'actions/nav'
+import cache from 'utils/cache'
+import { getNavData } from 'core/service/nav'
 
-const Nav = ({ navData = [], asyncQueryNavData }) => {
+const Nav = () => {
   const [showMask, setShowMask] = useState(false)
   const [showMaskImg, setShowMaskImg] = useState('../../img/14k.jpg')
   const [showNavData, setShowNavData] = useState({ data: [{ name: '', img: '', url: '', id: 0 }] })
+  const [navData, setNavData] = useState(null)
 
   const handleMouseMove = (item) => {
     if (!item.data.length) return
@@ -28,45 +29,62 @@ const Nav = ({ navData = [], asyncQueryNavData }) => {
   }
 
   useEffect(() => {
-    let _isMounted = true
-    if (_isMounted) {
-      asyncQueryNavData()
-    }
-
-    return () => {
-      _isMounted = false
-    }
-  }, [asyncQueryNavData])
+    ;(async () => {
+      const data = cache.getCache('allCategory')
+      const mergeData = await Promise.all(
+        data.map((item) => {
+          return (async () => {
+            const res = await getNavData(item.id)
+            return {
+              type: item.title_en,
+              id: item.id,
+              name: item.title_zh,
+              defaultImg: res[0] ? res[0].img : '',
+              data: res.map((i) => ({
+                name: i.title_zh,
+                img: i.img,
+                url: '/',
+                id: i.id,
+              })),
+            }
+          })()
+        }),
+      )
+      console.log(mergeData)
+      setNavData(mergeData)
+    })()
+  }, [])
 
   return (
     <div className={s.home_nav_wrap}>
       <div className={s.home_nav}>
         <ul>
-          {navData.map((item, index) => (
-            <li
-              className={s.home_nav_item}
-              key={`${item.id}-${index}`}
-              onMouseMove={() => handleMouseMove(item)}
-              onMouseLeave={() => setShowMask(false)}>
-              <span
-                className={item.id === showNavData.id ? 'curNav' : ''}
-                onClick={() => setShowMask(false)}>
-                {item.type === 'chain' ? (
-                  <Link
-                    href={{ pathname: '/chain/[id]', query: { type: '' } }}
-                    as={`/chain/${item.id}?type=${item.type}`}>
-                    {item.name}
-                  </Link>
-                ) : (
-                  <Link
-                    href={{ pathname: '/product/[id]', query: { type: '' } }}
-                    as={`/product/${item.id}?type=${item.type}`}>
-                    {item.name}
-                  </Link>
-                )}
-              </span>
-            </li>
-          ))}
+          {navData &&
+            navData.map((item, index) => (
+              <li
+                className={s.home_nav_item}
+                key={`${item.id}-${index}`}
+                onMouseMove={() => handleMouseMove(item)}
+                onMouseLeave={() => setShowMask(false)}>
+                <span
+                  className={item.id === showNavData.id ? 'curNav' : ''}
+                  onClick={() => setShowMask(false)}>
+                  {item.type === 'Necklace' ? (
+                    <Link
+                      href={{ pathname: '/chain/[id]', query: { type: '' } }}
+                      as={`/chain/${item.id}?type=${item.type}`}>
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <Link
+                      href={{ pathname: '/product/[id]', query: { type: '' } }}
+                      as={`/product/${item.id}?type=${item.type}`}>
+                      {item.name}
+                    </Link>
+                  )}
+                </span>
+              </li>
+            ))}
         </ul>
       </div>
       <div
@@ -140,8 +158,10 @@ const Nav = ({ navData = [], asyncQueryNavData }) => {
   )
 }
 
-const mapStateToProps = (state) => ({ navData: state.navDataReducer.navData })
+// const mapStateToProps = (state) => ({ navData: state.navDataReducer.navData })
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ asyncQueryNavData }, dispatch)
+// const mapDispatchToProps = (dispatch) => bindActionCreators({ asyncQueryNavData }, dispatch)
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+// export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+
+export default Nav

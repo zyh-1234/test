@@ -6,6 +6,7 @@ import ProductDetail from '@/p_product/ProductDetail'
 import { getProductCategory } from 'core/service/product'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
+import cache from 'utils/cache'
 
 export default function Product() {
   const route = useRouter()
@@ -15,6 +16,7 @@ export default function Product() {
   const [data, setData] = useState()
   const [showDetail, setShowDetail] = useState(false)
   const [selectItem, setSelectItem] = useState('111')
+  const [title, setTitle] = useState('')
   const handleChange = (item) => {
     console.log('choose', item)
   }
@@ -32,8 +34,10 @@ export default function Product() {
     let _isMounted = true
     async function fetchData(id) {
       const res = await getProductCategory(id)
+      console.log('data', res.data)
       if (_isMounted) {
-        setData(res)
+        setData(res.data)
+        setTitle(cache.getCache('allCategory').filter((i) => i.id == id)[0].title_zh)
       }
     }
     fetchData(id)
@@ -46,14 +50,14 @@ export default function Product() {
   return (
     <>
       <Nav />
-      <ProductBanner title={data && data.title} filterChange={(list) => handleFilterChange(list)} />
+      <ProductBanner title={title} filterChange={(list) => handleFilterChange(list)} />
       <Toolbar onChange={handleChange} />
       <ProductContent data={data} setShowDetail={setShowDetail} onSelectItem={handleSelectItem} />
       {showDetail ? (
         <ProductDetail
           setShowDetail={setShowDetail}
           title={data.title}
-          dataLists={data.dataLists.filter((item) => item.id === selectItem)[0]}
+          dataLists={data.filter((item) => item.id === selectItem)[0]}
         />
       ) : null}
     </>

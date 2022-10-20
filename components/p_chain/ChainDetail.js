@@ -28,7 +28,12 @@ const ChainDetail = ({ setShowDetail, dataLists, addGoods }) => {
   const [dropdownChainList, setDropdownChainList] = useState([
     { title: '条码', type: 'code', list: [] },
     { title: '色系颜色', type: 'color', list: [] },
-    { title: '链身长度', type: 'length', list: ['40', '50', '60'] },
+    {
+      title: '链身长度',
+      type: 'length',
+      list: ['17', '18', '19', '20', '21', '40', '45', '50', '55', '60', '70', '80'],
+    },
+    // { title: '尾链长度', type: 'length2', list: [] },
     { title: '链身宽度', type: 'width', list: [] },
     { title: '选购数量', type: 'count', list: [] },
   ])

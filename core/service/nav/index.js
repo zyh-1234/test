@@ -1,11 +1,13 @@
-import { localRequest } from '../index'
+// import { localRequest } from '../index'
+import { myRequest } from '../index'
 
 const NavAPI = {
-  NavData: '/nav',
+  // NavData: '/nav',
+  NavData: '/cpmenu',
 }
 
-export function getNavData() {
-  return localRequest.get({
-    url: NavAPI.NavData,
+export function getNavData(id) {
+  return myRequest.get({
+    url: `${NavAPI.NavData}/${id}`,
   })
 }

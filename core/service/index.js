@@ -13,7 +13,7 @@ export const myRequest = new MyRequest({
       // if (token) {
       //   config.headers.Authorization = `Bearer ${token}`
       // }
-      config.headers = { app: app }
+      config.headers = { app: app, 'X-CSRF-TOKEN': '' }
       return config
     },
     requestInterceptorCatch: (err) => {

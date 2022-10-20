@@ -28,8 +28,9 @@ export default function Chain() {
     let _isMounted = true
     async function fetchData(id) {
       const res = await getProductCategory(id)
+      console.log('chain', res)
       if (_isMounted) {
-        setData(res)
+        setData(res.data)
       }
     }
 
@@ -44,9 +45,9 @@ export default function Chain() {
     <>
       <Nav />
       <ChainBanner
-        title={data && data.title}
-        topBanner={data && data.topBanner}
+        title="链条"
         des="UNTARNISHED CHAINS"
+        topBanner="../../../../img/hexinjisu.png"
       />
       <Toolbar onChange={handleChange} />
       <ChainContent data={data} setShowDetail={setShowDetail} onSelectItem={handleSelectItem} />
@@ -54,7 +55,7 @@ export default function Chain() {
         <ChainDetail
           setShowDetail={setShowDetail}
           title={data.title}
-          dataLists={data.dataLists.filter((item) => item.id === selectItem)[0]}
+          dataLists={data.filter((item) => item.id === selectItem)[0]}
         />
       ) : null}
     </>

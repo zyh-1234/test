@@ -3,7 +3,7 @@ import { mapCodeToName } from 'utils/mapData'
 import useChangeWindowSize from 'core/hooks/useChageWindowSize'
 
 export default function ProductCard({ data }) {
-  const { name, price, img } = data
+  const { name, price, img } = data.xx[0]
   const size = useChangeWindowSize()
   const width = size.w < 1260 ? (size.w < 960 ? (size.w = 960 / 1.5) : size.w / 1.5) : size.w / 2
 
@@ -33,7 +33,7 @@ export default function ProductCard({ data }) {
               <p>{mapCodeToName(name)}</p>
             </span>
           </span>
-          <p className={s.product_card_des_price}>¥{price}</p>
+          {price && <p className={s.product_card_des_price}>¥{price}</p>}
         </div>
       </div>
     </div>

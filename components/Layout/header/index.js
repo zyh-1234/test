@@ -2,12 +2,12 @@ import { Component } from 'react'
 import Link from 'next/link'
 import { connect } from 'react-redux'
 import HeaderLanguageBar from './cpn/HeaderLanguageBar'
-import HeaderLoginBar from './cpn/HeaderLoginBar'
+// import HeaderLoginBar from './cpn/HeaderLoginBar'
 import HeaderNavBar from './cpn/HeaderNavBar'
 import HeaderLogo from './cpn/HeaderLogo'
 import HeaderSearchBar from './cpn/HeaderSearchBar'
 import s from './Header.module.css'
-import HeaderUserBar from './cpn/HeaderUserBar'
+// import HeaderUserBar from './cpn/HeaderUserBar'
 
 @connect((state) => ({
   loginStatus: state.loginPageReducer.loginStatus,
@@ -32,7 +32,7 @@ class Header extends Component {
         },
         {
           title: '公司产品',
-          href: '/product/category/1',
+          href: '/product/10002',
           url: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.52192 4.88651C3.37972 4.96724 3.28134 5.10592 3.25338 5.26504L3.00808 6.66082C2.98277 6.80487 3.01746 6.95288 3.10435 7.0715C3.19123 7.19011 3.32299 7.26935 3.46994 7.29137L5.76323 7.63486C3.73311 9.49227 3.19757 12.5445 4.64297 15.0065C6.32348 17.8691 10.0454 18.8499 12.9561 17.1972C15.8669 15.5445 16.8642 11.8842 15.1837 9.02161C13.7195 6.52766 10.7059 5.46207 8.02914 6.32194L8.85978 4.23106C8.91387 4.09489 8.90997 3.94305 8.84896 3.80975C8.78795 3.67644 8.67496 3.57289 8.53545 3.52243L7.18367 3.03345C7.02957 2.97771 6.85826 2.99216 6.71607 3.07289L3.52192 4.88651ZM4.19453 6.29918L4.29957 5.70147L7.0449 4.14269L7.62376 4.35208L6.70109 6.67462L4.19453 6.29918ZM14.2254 9.5657C15.6004 11.9078 14.7844 14.9026 12.4029 16.2548C10.0214 17.607 6.97618 16.8045 5.60121 14.4625C4.22625 12.1204 5.04221 9.12556 7.42372 7.77336C9.80523 6.42116 12.8504 7.22361 14.2254 9.5657Z' fill='white'/%3E%3C/svg%3E",
         },
         {
@@ -42,8 +42,9 @@ class Header extends Component {
         },
       ],
     }
-    const { campaignTitle, language, loginBarContent, menus, searchText, text } = mockData
-    const { loginStatus, userInfo } = this.props
+    const { campaignTitle, language, menus, searchText } = mockData
+    // const { campaignTitle, language, loginBarContent, menus, searchText, text } = mockData
+    // const { loginStatus, userInfo } = this.props
 
     return (
       <header className={s.header}>
@@ -59,11 +60,11 @@ class Header extends Component {
         <div className={s.header_head_wrap}>
           <div className={s.head}>
             <HeaderLanguageBar language={language} />
-            {loginStatus ? (
+            {/* {loginStatus ? (
               <HeaderUserBar text={text} userInfo={userInfo} />
             ) : (
               <HeaderLoginBar data={loginBarContent} />
-            )}
+            )} */}
           </div>
         </div>
         {/* 关于我们&搜索 */}

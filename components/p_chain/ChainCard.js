@@ -2,7 +2,7 @@ import useChangeWindowSize from 'core/hooks/useChageWindowSize'
 import s from './ChainCard.module.css'
 
 export default function ChainCard({ data }) {
-  const { name, img } = data
+  const { name, img } = data.xx[0]
   const size = useChangeWindowSize()
   const width = size.w < 1260 ? (size.w < 960 ? (size.w = 960 / 1.5) : size.w / 1.5) : size.w / 2
   const imgStyle = {

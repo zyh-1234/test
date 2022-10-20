@@ -5,4 +5,9 @@ const withImages = require('next-images')
 module.exports = withImages({
   // Use the CDN in production and localhost for development.
   // assetPrefix: isProd ? 'https://cdn.mydomain.com' : '',
+  // inlineImageLimit: 50000,
+  
 })
+
+
+
