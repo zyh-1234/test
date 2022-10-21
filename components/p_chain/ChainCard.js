@@ -1,4 +1,5 @@
 import useChangeWindowSize from 'core/hooks/useChageWindowSize'
+import { mapCodeToName } from 'utils/mapData'
 import s from './ChainCard.module.css'
 
 export default function ChainCard({ data }) {
@@ -27,7 +28,7 @@ export default function ChainCard({ data }) {
         <div className={s.chain_des}>
           <p>{name}</p>
           <p className={s.fj_icon} style={iconStyle}></p>
-          <p>14K Gold-Plated Chain</p>
+          <p>{mapCodeToName(name)}</p>
         </div>
       </div>
     </div>

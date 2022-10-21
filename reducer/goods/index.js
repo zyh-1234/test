@@ -7,7 +7,7 @@ const initialState = {
     title: 'SHOPPING BAG',
     backTo: ' Continue Shopping',
     toUrl: '/product/detail/10002',
-    des: '你的购物袋空空如也~',
+    empty: '你的购物袋空空如也~',
   },
   description: [
     {

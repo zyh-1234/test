@@ -128,6 +128,21 @@ export default function Dropdown({
             </p>
           </div>
         )
+      case mapDropdownType.SIZE:
+        return (
+          <div className={s.select_wrap}>
+            <div className={s.select_wrap}>
+              <input
+                ref={inputEl}
+                className={s.select_name}
+                style={{ width: '90px', outline: 'none', border: 'none' }}
+                type="text"
+                value={select}
+                readOnly={true}
+              />
+            </div>
+          </div>
+        )
       default:
         return (
           <div className={s.select_wrap}>

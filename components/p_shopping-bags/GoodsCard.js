@@ -3,7 +3,7 @@ import { mapCodeToName } from 'utils/mapData'
 import s from './GoodsCard.module.css'
 
 export default function GoodsCard({ data, onAction }) {
-  const { code, name, price, qty, moreqty, img, type = '', id, stamp = '', note = '' } = data
+  const { name, price, qty, moreqty, img, type = '', id, stamp = '', note = '' } = data
 
   const handleClick = (action) => {
     onAction(id, action)
@@ -27,7 +27,7 @@ export default function GoodsCard({ data, onAction }) {
           <div className={s.name}>{mapCodeToName(name)}</div>
           <div className={s.code}>
             <span>Item No. :</span>
-            <span>{code}</span>
+            <span>{name}</span>
           </div>
           <div className={s.single_price}>
             <span>Single Price:</span>

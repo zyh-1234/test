@@ -140,7 +140,9 @@ const ProductDetail = ({ setShowDetail, dataLists, addGoods }) => {
 
     const price = Number(dataLists.price)
     const _currentProduct = JSON.parse(JSON.stringify(currentProduct))
-    addGoods({ ..._currentProduct, qty, price, stamp: '', note: '', name: 110 })
+    const goods = { ..._currentProduct, qty, price, stamp: '', note: '' }
+    addGoods(goods)
+    console.log('add goods to cart: ', goods)
 
     // 提示信息
     notification.success({
@@ -211,7 +213,7 @@ const ProductDetail = ({ setShowDetail, dataLists, addGoods }) => {
                       : item.type === mapDropdownType.COLOR
                       ? currentProduct.sx.title_zh
                       : item.type === mapDropdownType.SIZE
-                      ? '9#'
+                      ? 'normal'
                       : currentProduct[item.type]
                   }
                   onSelect={(sel, type) => handleSelect(sel, type)}

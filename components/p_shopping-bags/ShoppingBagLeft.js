@@ -16,7 +16,7 @@ export default function ShoppingBagLeft({ goodsList, handleAction, goodsDesText 
           goodsList.map((item) => <GoodsCard key={item.id} data={item} onAction={handleAction} />)
         ) : (
           <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>{goodsDesText.des}</h1>
+            <h1>{goodsDesText.empty}</h1>
           </div>
         )}
       </div>

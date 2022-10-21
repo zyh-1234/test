@@ -130,15 +130,16 @@ const ChainDetail = ({ setShowDetail, dataLists, addGoods }) => {
 
     const price = Number(dataLists.price)
     const _currentProduct = JSON.parse(JSON.stringify(currentProduct))
-    addGoods({
+    const goods = {
       ..._currentProduct,
       qty: [{ size: { width: 2, length }, count }],
       price,
       stamp: '',
       note: '',
       type: 'chain',
-      name: 110,
-    })
+    }
+    addGoods(goods)
+    console.log('add goods to cart: ', goods)
 
     // 提示信息
     notification.success({
@@ -162,7 +163,7 @@ const ChainDetail = ({ setShowDetail, dataLists, addGoods }) => {
         </div>
 
         <div className={s.chain_content_wrap}>
-          <div className={s.title}>{currentProduct.title}</div>
+          <div className={s.title}>{currentProduct.name}</div>
           <div className={s.head_img}>
             <Loupe
               baseWidth={680}
@@ -170,7 +171,7 @@ const ChainDetail = ({ setShowDetail, dataLists, addGoods }) => {
               magnification={3}
               maxImg={currentProduct.img}
               img={currentProduct.img_s}
-              title={currentProduct.title}
+              title={currentProduct.name}
             />
           </div>
           <div className={s.chain_choose_list_wrap}>

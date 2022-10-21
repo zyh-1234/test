@@ -50,7 +50,7 @@ const Nav = () => {
           })()
         }),
       )
-      console.log(mergeData)
+      console.log('nav data: ', mergeData)
       setNavData(mergeData)
     })()
   }, [])

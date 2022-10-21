@@ -9,7 +9,6 @@ import { bindActionCreators } from 'redux'
 import { removeGoods, editGoods, editGoodsStamp, editGoodsNote } from 'actions/goods'
 
 import s from './shopping-bags.module.css'
-import cache from 'utils/cache'
 
 function ShoppingBags({
   goodsList,
@@ -72,11 +71,9 @@ function ShoppingBags({
   const handleClickSend = () => {
     if (goodsList.length === 0) {
       message.warning('购物车是空的，订单失败')
-      console.log(cache.getCache('allStone'))
       return
     }
-    console.log(goodsList)
-    console.log('send')
+    console.log('send order: ', goodsList)
   }
 
   useEffect(() => {
