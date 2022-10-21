@@ -32,7 +32,7 @@ app
       })
     }
 
-    server.post('/upload', (req, res) => {
+    server.post('/upload', (req) => {
       console.log(req.body.json())
     })
 
